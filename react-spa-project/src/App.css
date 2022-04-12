@@ -2,3 +2,14 @@
   text-align: center;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fbeb64;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
