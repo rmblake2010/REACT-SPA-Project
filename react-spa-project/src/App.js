@@ -3,6 +3,7 @@ import PokeCard from './components/PokeCard';
 import Navbar from './components/Navbar';
 import Search from './components/Search';
 import Berries from './components/Berries';
+import Team from './components/Team';
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { useState, useEffect} from 'react' 
@@ -43,6 +44,7 @@ function App() {
           }/>
           <Route path='/search' element={<Search/>} />
           <Route path='/berries' element={<Berries/>}/>
+          <Route path='/team' element={<Team/>}  />
         </Routes>
       </Router>
     </div>

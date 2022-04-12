@@ -1,12 +1,12 @@
 import Navbar from "./Navbar"
 
-const Search = () => {
+const Team = () => {
     return(
         <div>
             <Navbar/>
-            <h1>Search Area!</h1>
+            <h1>Team Area!</h1>
         </div>
     )
 }
 
-export default Search
+export default Team
