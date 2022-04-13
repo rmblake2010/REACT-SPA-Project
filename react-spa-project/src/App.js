@@ -10,20 +10,38 @@ import { useState, useEffect} from 'react'
 import { Fragment } from 'react';
 
 function App() {
+  let [search, setSearch] = useState('')
   const [data, setData] = useState(null)
+  let [team, setTeam] = useState([])
 
-
+  //Searching for pokemon
   useEffect(() => {
-  const API_URL = `https://pokeapi.co/api/v2/pokemon/squirtle`
+    //Renders Pokemon Card for home page if no pokemon has been searched
+  const handleAPISearch = () => {
+    if(search === ''){
+      return `https://pokeapi.co/api/v2/pokemon/pikachu`
+    }else{
+      return `https://pokeapi.co/api/v2/pokemon/${search}`
+    }
+  }
   const fetchData = async () => {
-    const response = await fetch(API_URL)
+    const response = await fetch(handleAPISearch())
     const resData = await response.json()
     console.log(resData)
     setData(resData)
   }
     fetchData()
-  }, [])
+  }, [search])
 
+  //Function to handle searching, will pass down to Search
+  const handleSearch = (e, term) => {
+    e.preventDefault()
+    setSearch(term)
+  }
+
+
+
+  // Function to render component w/ API data. Needed to wait for useEffect fetch before rendering
   const renderPokeCard = () => {
     if(data){
       return(
@@ -42,7 +60,7 @@ function App() {
               {renderPokeCard()}
             </Fragment>
           }/>
-          <Route path='/search' element={<Search/>} />
+          <Route path='/search' element={<Search handleSearch={handleSearch} renderPokeCard={renderPokeCard}/>} />
           <Route path='/berries' element={<Berries/>}/>
           <Route path='/team' element={<Team/>}  />
         </Routes>
