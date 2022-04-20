@@ -25,3 +25,8 @@ li {
   width: 15%;
   justify-content: space-evenly;
 }
+
+.team-img{
+  max-width: 3%;
+  max-height: 3%;
+}

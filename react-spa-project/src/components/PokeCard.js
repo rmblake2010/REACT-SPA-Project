@@ -9,17 +9,13 @@ const PokeCard = ({ data }) => {
         )
     })
 
-    const renderGames = data.game_indices.map((game, i ) => {
-        return(
-            <li key={i}>{game.version.name}</li>
-        )
-    })
-
     const renderTypes = data.types.map((type, i) => {
         return(
             <li key={i}>{type.type.name}</li>
         )
     })
+
+    
 
     return(
         <div className="Wrapper">
@@ -34,17 +30,12 @@ const PokeCard = ({ data }) => {
                     <h4>Type:</h4>
                     {renderTypes}
                 </div>
+
             </div>
             <ul>
                     <h4>Stats</h4>
                     {renderStats}
             </ul>
-            <div>
-                <h1>Seen in:</h1>
-                <ul>
-                    {renderGames}
-                </ul>
-            </div>
         </div>
 
     )

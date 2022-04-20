@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Search from './components/Search';
 import Berries from './components/Berries';
 import Team from './components/Team';
+import TeamList from './components/TeamList';
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { useState, useEffect} from 'react' 
@@ -57,6 +58,7 @@ function App() {
           <Route path='/' element={
             <Fragment>
               <Navbar/>
+              <TeamList/>
               {renderPokeCard()}
             </Fragment>
           }/>

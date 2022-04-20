@@ -1,5 +1,6 @@
 import Navbar from "./Navbar"
 import { useState } from "react"
+import TeamList from "./TeamList"
 
 
 const Search = ({handleSearch, renderPokeCard}) => {
@@ -8,6 +9,7 @@ const Search = ({handleSearch, renderPokeCard}) => {
     return(
         <div>
             <Navbar/>
+            <TeamList/>
             <div>
                 <form onSubmit={(e) => handleSearch(e, searchTerm)}>
                     <input 
